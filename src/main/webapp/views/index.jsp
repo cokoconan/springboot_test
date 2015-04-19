@@ -54,7 +54,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     
     
     <div role="tabpanel" class="tab-pane" id="profile" >
-    	<form class="form-horizontal" style="margin: 30px 100px;" method="post" name="pfrm">
+    	<form class="form-horizontal" style="margin: 30px 100px;" method="post" name="pfrm" action="/pst">
 			  <div class="form-group">
 			    <label for="inputEmail3" class="col-sm-2 control-label">이름</label>
 			    <div class="col-sm-10">

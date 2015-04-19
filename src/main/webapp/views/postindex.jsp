@@ -20,8 +20,8 @@
 	}
 </script>
 </head>
-<body style="text-align: center; margin: 10px 10px 10px 10px;">
 
+<body style="text-align: center; margin: 10px 10px 10px 10px;">
 <table class="table table-hover">
 <tr>
 	<td>순번</td>
@@ -29,14 +29,12 @@
 	<td>폰번호</td>
 	<td>나이</td>
 </tr>
-<c:forEach items="${usr }" var="a" varStatus="aa">
 <tr>
-	<td>${aa.count }</td>
-	<td>${a.name }</td>
-	<td>${a.phone }</td>
-	<td>${a.age }</td>
+	<td>${usr.idx }</td>
+	<td>${usr.name }</td>
+	<td>${usr.phone }</td>
+	<td>${usr.age }</td>
 </tr>
-</c:forEach>
 
 </table>
 
