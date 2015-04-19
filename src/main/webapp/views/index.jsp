@@ -82,7 +82,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     </div>
     
     
-    <div role="tabpanel" class="tab-pane" id="messages">JPA</div>
+    <div role="tabpanel" class="tab-pane" id="messages"><a href="/jpalist">JPA</a></div>
   </div>
 
 </div>
