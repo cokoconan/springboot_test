@@ -56,15 +56,21 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     <div role="tabpanel" class="tab-pane" id="profile" >
     	<form class="form-horizontal" style="margin: 30px 100px;" method="post" name="pfrm">
 			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+			    <label for="inputEmail3" class="col-sm-2 control-label">이름</label>
 			    <div class="col-sm-10">
-			      <input type="email" class="form-control" id="pemail" name="pemail" placeholder="Email">
+			      <input type="text" class="form-control" id="name" name="name" placeholder="이름">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			    <label for="inputPassword3" class="col-sm-2 control-label">폰번호</label>
 			    <div class="col-sm-10">
-			      <input type="password" class="form-control" id="ppwd" name="ppwd" placeholder="Password">
+			      <input type="text" class="form-control" id="phone" name="phone" placeholder="폰번호">
+			    </div>
+			  </div>
+			  	<div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">나이</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="age" name="age" placeholder="나이">
 			    </div>
 			  </div>
 			  <div class="form-group">
