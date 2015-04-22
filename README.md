@@ -50,7 +50,8 @@ springboot
 
 
 
-*
+*참고
+
         @Configuration
         @EnableAutoConfiguration
         @EntityScan
