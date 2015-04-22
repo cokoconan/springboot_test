@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,6 +46,14 @@ public class HomeController {
 	public ModelAndView jpaIndex(){
 		ModelAndView mav = new ModelAndView("jpaindex");
 		List<User> usrlist = this.repo.findAll();
+		mav.addObject("usr",usrlist);
+		return mav;
+	}
+	
+	@RequestMapping(value="/jpalist", method=RequestMethod.GET)
+	public ModelAndView jpaFindIndex( @RequestParam("name") String name, Model model){
+		ModelAndView mav = new ModelAndView("jpaindex");
+		List<User> usrlist = this.repo.findByName(name);
 		mav.addObject("usr",usrlist);
 		return mav;
 	}

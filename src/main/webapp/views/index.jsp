@@ -39,7 +39,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
-    	<form class="form-horizontal" style="margin: 30px 100px;" method="get" name="gfrm" action="/gett">
+    	<!--  form class="form-horizontal" style="margin: 30px 100px;" method="get" name="gfrm" action="/gett">
 		  <div class="form-group">
 		    <label for="exampleInputName2">Name</label>
 		    <input type="text" class="form-control" id="gname" name="gname" placeholder="이지은">
@@ -49,7 +49,9 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 		    <input type="email" class="form-control" id="gemail" name="gemail" placeholder="이지은메일@example.com">
 		  </div>
 		  <button type="submit" class="btn btn-primary">Send</button>
-		</form>
+		</form-->
+		<br/><br/><br/>
+		<a href="/gett?gname=이지은&gemail=jieun1223@jei.com"> <button type="button" class="btn btn-primary">GET 테스트 </button></a>
     </div>
     
     
@@ -75,14 +77,24 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 			  </div>
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			       <button type="submit" class="btn btn-primary">Send</button>
+			       <button type="submit" class="btn btn-primary">POST 테스트</button>
 			    </div>
 			  </div>
 			</form>
     </div>
     
     
-    <div role="tabpanel" class="tab-pane" id="messages"><a href="/jpalist">JPA</a></div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+    	<br/><br/><br/>
+    	<a href="/jpalist"><button type="button" class="btn btn-primary"> JPA 테스트</button></a>
+    	<form class="form-horizontal" style="margin: 30px 100px;" method="get" name="frmjpa" action="/jpalist">
+		  <div class="form-group">
+		    <label for="exampleInputName2">Name</label>
+		    <input type="text" class="form-control" id="name" name="name" placeholder="검색이름 입력">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Send</button>
+		</form>
+    </div>
   </div>
 
 </div>

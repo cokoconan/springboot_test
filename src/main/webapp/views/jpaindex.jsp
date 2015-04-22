@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,27 +15,34 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
-	function aa(){
-		location.href="/";
+	function aa() {
+		location.href = "/";
 	}
 </script>
 </head>
 
 <body style="text-align: center; margin: 10px 10px 10px 10px;">
-${usr }
-<table class="table table-hover">
-<tr>
-	<td>순번</td>
-	<td>이름</td>
-	<td>폰번호</td>
-	<td>나이</td>
-</tr>
-<tr>
+	<!-- ${usr } -->
+	<table class="table table-hover">
+		<tr>
+			<td>순번</td>
+			<td>이름</td>
+			<td>폰번호</td>
+			<td>나이</td>
+			<td>등록일</td>
+		</tr>
+		<c:forEach var="u" items="${usr}">
+			<tr>
+				<td>${u.idx}</td>
+				<td>${u.name }</td>
+				<td>${u.phonenum }</td>
+				<td>${u.age }</td>
+				<td>${u.reg_date }</td>
+			</tr>
+		</c:forEach>
 
-</tr>
+	</table>
 
-</table>
-
-<button type="button" class="btn btn-info" id="goback" onclick="aa()">뒤로가기</button>
+	<button type="button" class="btn btn-info" id="goback" onclick="aa()">뒤로가기</button>
 </body>
 </html>
