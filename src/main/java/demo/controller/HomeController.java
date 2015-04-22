@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import demo.domain.User;
-import demo.repo.UserRepository;
+import demo.repo.JpaUserRepository;
 
 @Controller
 public class HomeController {
@@ -39,7 +39,7 @@ public class HomeController {
 	
 	
 	@Autowired
-	private UserRepository repo;
+	private JpaUserRepository repo;
 	
 	@RequestMapping(value="/jpalist")
 	public ModelAndView jpaIndex(){

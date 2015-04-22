@@ -3,9 +3,6 @@ package demo.domain;
 
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -13,24 +10,14 @@ import javax.persistence.Table;
 @Table( name = "user" )
 public class User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idx;
 	
 	private String name;
 	
-	private String phone;
+	private String phonenum;
 	
 	private int age;
-
 	
-	public int getIdx() {
-		return idx;
-	}
-
-	public void setIdx(int idx) {
-		this.idx = idx;
-	}
+	private String reg_date;
 
 	public String getName() {
 		return name;
@@ -40,12 +27,12 @@ public class User {
 		this.name = name;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getPhonenum() {
+		return phonenum;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhonenum(String phonenum) {
+		this.phonenum = phonenum;
 	}
 
 	public int getAge() {
@@ -56,21 +43,32 @@ public class User {
 		this.age = age;
 	}
 
-	@Override
-	public String toString() {
-		return "User [idx=" + idx + ", name=" + name + ", phone=" + phone
-				+ ", age=" + age + "]";
+	public String getReg_date() {
+		return reg_date;
 	}
 
-	public User(int idx, String name, String phone, int age) {
-		this.idx = idx;
+	public void setReg_date(String reg_date) {
+		this.reg_date = reg_date;
+	}
+
+	public User(String name, String phonenum, int age, String reg_date) {
+		super();
 		this.name = name;
-		this.phone = phone;
+		this.phonenum = phonenum;
 		this.age = age;
+		this.reg_date = reg_date;
+	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", phonenum=" + phonenum + ", age=" + age
+				+ ", reg_date=" + reg_date + "]";
 	}
 
 	public User() {
 	}
+
+	
 	
 
 }
