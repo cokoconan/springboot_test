@@ -11,5 +11,5 @@ import demo.domain.User;
 public interface JpaUserRepository  extends JpaRepository<User, Long> {
 	
 	List<User> findAll();
-	List<User> findByName(String name);
+	List<User> findByNameLike(String name);
 }
