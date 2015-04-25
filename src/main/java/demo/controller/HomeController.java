@@ -53,7 +53,7 @@ public class HomeController {
 	@RequestMapping(value="/jpalist", method=RequestMethod.GET)
 	public ModelAndView jpaFindIndex( @RequestParam("name") String name, Model model){
 		ModelAndView mav = new ModelAndView("jpaindex");
-		List<User> usrlist = this.repo.findByName(name);
+		List<User> usrlist = this.repo.findByNameLike(name);
 		mav.addObject("usr",usrlist);
 		return mav;
 	}
