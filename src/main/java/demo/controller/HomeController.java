@@ -57,6 +57,7 @@ public class HomeController {
 		return mav;
 	}
 	
+	/*
 	@RequestMapping(value="/jpalist", method=RequestMethod.GET)
 	public ModelAndView jpaFindIndex( @RequestParam("name") String name, Model model){
 		ModelAndView mav = new ModelAndView("jpaindex");
@@ -64,6 +65,7 @@ public class HomeController {
 		mav.addObject("usr",usrlist);
 		return mav;
 	}
+	*/
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public ModelAndView loginPage(){
@@ -72,8 +74,24 @@ public class HomeController {
 	}
 	
 	
+	
+	@RequestMapping(value="/reg", method=RequestMethod.POST)
+	public ModelAndView Registration(@ModelAttribute("reg") User usr){
+		ModelAndView mav = new ModelAndView("welcome");
+		User rs = this.repo.save(usr);
+		if(rs == null){
+			mav.addObject("result","fail");
+		}else{
+			mav.addObject("user",rs);
+			mav.addObject("result","good");
+		}
+		return mav;
+	}
+	
+	
+	
 	// Criteria 연습해보기.
-	@RequestMapping(value="/cre", method=RequestMethod.GET)
+	@RequestMapping(value="/cri", method=RequestMethod.POST)
 	public ModelAndView CriteriaTest(){
 		ModelAndView mav = new ModelAndView("cri");
 		
@@ -82,7 +100,7 @@ public class HomeController {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		
 		CriteriaQuery<User> q =  cb.createQuery(User.class);
-		Root<User> c = q.from(User.class);
+		//Root<User> c = q.from(User.class);
 		//q.select(c.get("name"), cb.count(c.get("name")));
 		return mav;
 	}

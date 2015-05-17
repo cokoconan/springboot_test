@@ -34,6 +34,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">GET</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">POST</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">JPA</a></li>
+      <li role="presentation"><a href="#reg" aria-controls="reg" role="tab" data-toggle="tab">회원가입</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -95,6 +96,37 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 		  <button type="submit" class="btn btn-primary">Send</button>
 		</form>
     </div>
+    
+    
+    
+      <div role="tabpanel" class="tab-pane" id="reg" >
+    	<form class="form-horizontal" style="margin: 30px 100px;" method="post" name="reg" action="/reg">
+			  <div class="form-group">
+			    <label for="inputEmail3" class="col-sm-2 control-label">이름</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="name" name="name" placeholder="이름">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">폰번호</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="phone" name="phone" placeholder="폰번호">
+			    </div>
+			  </div>
+			  	<div class="form-group">
+			    <label for="inputPassword3" class="col-sm-2 control-label">나이</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="age" name="age" placeholder="나이">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			       <button type="submit" class="btn btn-primary">회원가입</button>
+			    </div>
+			  </div>
+			</form>
+    </div>
+    
   </div>
 
 </div>

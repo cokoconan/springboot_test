@@ -12,4 +12,6 @@ public interface JpaUserRepository  extends JpaRepository<User, Long> {
 	
 	List<User> findAll();
 	List<User> findByNameLike(String name);
+	User save(User user);
+
 }
