@@ -2,6 +2,13 @@ package demo.controller;
 
 import java.util.List;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.jpa.criteria.CriteriaBuilderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,5 +70,23 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("login");
 		return mav;
 	}
+	
+	
+	// Criteria 연습해보기.
+	@RequestMapping(value="/cre", method=RequestMethod.GET)
+	public ModelAndView CriteriaTest(){
+		ModelAndView mav = new ModelAndView("cri");
+		
+		EntityManagerFactory em =
+			      Persistence.createEntityManagerFactory("application.properties");
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		
+		CriteriaQuery<User> q =  cb.createQuery(User.class);
+		Root<User> c = q.from(User.class);
+		//q.select(c.get("name"), cb.count(c.get("name")));
+		return mav;
+	}
+	
+	
 
 }
